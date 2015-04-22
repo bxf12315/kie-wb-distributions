@@ -20,6 +20,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
 import javax.inject.Inject;
 
 import com.google.gwt.animation.client.Animation;
@@ -28,6 +29,7 @@ import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.Style;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.RootPanel;
+
 import org.guvnor.common.services.shared.config.AppConfigService;
 import org.guvnor.common.services.shared.security.KieWorkbenchACL;
 import org.guvnor.common.services.shared.security.KieWorkbenchPolicy;
@@ -45,8 +47,8 @@ import org.jbpm.console.ng.ht.forms.service.PlaceManagerActivityService;
 import org.kie.workbench.common.screens.social.hp.config.SocialConfigurationService;
 import org.kie.workbench.common.services.shared.preferences.ApplicationPreferences;
 import org.kie.workbench.common.widgets.client.menu.AboutMenuBuilder;
-import org.kie.workbench.common.widgets.client.menu.LanguageSelectorMenuBuilder;
 import org.kie.workbench.common.widgets.client.menu.ResetPerspectivesMenuBuilder;
+import org.kie.workbench.common.widgets.client.menu.WorkbenchConfigurationMenuBuilder;
 import org.kie.workbench.common.widgets.client.resources.RoundedCornersResource;
 import org.kie.workbench.drools.client.home.HomeProducer;
 import org.kie.workbench.drools.client.resources.i18n.AppConstants;
@@ -174,7 +176,7 @@ public class KieDroolsWorkbenchEntryPoint {
                                 .position( MenuPosition.RIGHT )
                                 .withItems( getRoles() )
                                 .endMenu()
-                                .newTopLevelCustomMenu( iocManager.lookupBean( LanguageSelectorMenuBuilder.class ).getInstance() )
+                                .newTopLevelCustomMenu( iocManager.lookupBean( WorkbenchConfigurationMenuBuilder.class ).getInstance() )
                                 .endMenu()
                                 .newTopLevelCustomMenu( iocManager.lookupBean( CustomSplashHelp.class ).getInstance() )
                                 .endMenu()
